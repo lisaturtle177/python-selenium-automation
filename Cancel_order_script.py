@@ -13,7 +13,7 @@ elem.send_keys("Cancel order")
 elem.send_keys(Keys.RETURN)
 
 expected_result = "Cancel Items or Orders"
-actual_result = driver.find_element(By.XPATH, "//div[@class='help-content']//a[contains(text(), 'Cancel Items or Orders')]").text
+actual_result = driver.find_element(By.XPATH, "//div[@class='help-content']/h1").text
 print(actual_result)
 
 assert expected_result == actual_result, f"Expected search text {expected_result} did not match actual search text {actual_result}"
