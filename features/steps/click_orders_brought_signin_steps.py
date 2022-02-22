@@ -6,6 +6,8 @@ SIGNIN2=(By.XPATH, "//h1[@class='a-spacing-small']")
 
 @then('Verify user is brought to signin page')
 def verify_result(context):
-    expected_result = context.driver.find_element(*SIGNIN)
-    actual_result = context.driver.find_element(*SIGNIN2).text
+    expected_result = "Sign-In"
+    actual_result = context.driver.find_element(*SIGNIN).text
     assert expected_result == actual_result, f"Expected text {expected_result} did not match actual {actual_result}"
+
+
