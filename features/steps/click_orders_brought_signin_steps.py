@@ -5,9 +5,6 @@ SIGNIN=(By.CSS_SELECTOR, 'h1.a-spacing-small')
 
 
 @then('Verify user is brought to signin page')
-def verify_result(context):
-    expected_result = "Sign-In"
-    actual_result = context.driver.find_element(*SIGNIN).text
-    assert expected_result == actual_result, f"Expected text {expected_result} did not match actual {actual_result}"
-
+def verify_result(context, expected_result):
+    context.app.search_results_page.verify_signin_page(expected_result)
 
